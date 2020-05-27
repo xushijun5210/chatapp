@@ -60,9 +60,19 @@
 			},
 			// 登录提交
 			login:function(){
-				if(this.user && this.password){
-					console.log("提交成功");
-				}
+				uni.request({
+					url:'http://tp5.1.com/index/5',
+					data:{
+						
+					},
+					method:'GET',
+					success: (data) => {
+						console.log(data);
+					}
+				})
+				// if(this.user && this.password){
+				// 	console.log("提交成功");
+				// }
 			}
 		}
 	}
