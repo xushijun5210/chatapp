@@ -1,0 +1,26 @@
+.box_tou{
+	font-size: 20px;
+	margin: 20upx;
+	text-align: center;
+	border-bottom: 1px solid #4CD964;
+}
+.box{
+	display: flex;
+	flex-direction: row;
+	margin: 20upx;
+}
+.box1{
+	display: flex;
+	flex-direction: row-reverse;
+}
+.touxiang{
+	width: 80upx;
+	height:80upx ;
+	border-radius:10%;
+	margin: 10upx;
+}
+.box-content{
+	width: 600upx;;
+	font-size: 16px;
+	margin-top: 25upx;
+}

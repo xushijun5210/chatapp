@@ -2,17 +2,14 @@
 	<view class="content">
 		<view class="top-bar">
 			<view class="top-bar-left">
-				<image class="top-bar-left-img" src="../../static/img/03d3f3e4f8c6f9ea2a0c503346735882.jpg" mode=""></image>
-			</view>
-			<view class="top-bar-center">
-				<image class="top-bar-center-img" src="../../static/img/2256974_131330799000_2.jpg" mode=""></image>
+				首页
 			</view>
 			<view class="top-bar-right">
 				<view class="search" >
-					<image class="top-bar-right-img-left" src="../../static/img/search.png" mode=""></image>
+					<image class="top-bar-img top-bar-img-left" src="../../static/uniappimg/search.png" mode=""></image>
 				</view>
 				<view class="add" @tap="toSearch">
-					<image class="top-bar-right-img-right" src="../../static/img/03B58PIC7un_1024.png" mode=""></image>
+					<image class="top-bar-img top-bar-img-right" src="../../static/uniappimg/tianjia.jpg" mode=""></image>
 				</view>
 			</view>
 		</view>
@@ -39,7 +36,7 @@
 				</view>
 			</view>
 			<view class="friends">
-				<view class="friend-list" v-for="(item,index) in friends" :key="item.id">
+				<view class="friend-list" v-for="(item,index) in friends" :key="item.id" @tap="tochatone">
 					<view class="friend-list-l">
 						<image :src="item.imgurl" class="friend-list-l-img" mode=""></image>
 						<text class="tip" v-if="item.tip>99">99+</text>
@@ -89,9 +86,9 @@
 				return myfunction.dateTime(date);
 			},
 			//跳转到注册页面
-			toSearch:function(){
+			tochatone:function(){
 				uni.navigateTo({
-				    url: '../search/search',
+				    url: '../chatone/chatone',
 				});
 			},
 
@@ -100,6 +97,6 @@
 </script>
 
 <style lang="scss">
-	@import url("../../commons/css/mycss.scss");
+	@import url("../../commons/css/publictop.css");
 	@import url("index.css");
 </style>
