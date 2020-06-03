@@ -126,6 +126,16 @@
 			// 判断注册提交
 			register:function(){
 				if(this.UserName && this.UserEmail && this.UserPassword){
+					uni.request({
+						url:'http://tp5.1.com/index/index',
+						data:{
+							email:this.UserEmail,
+						},
+						method:'POST',
+						success: (data) => {
+							console.log(data);
+						}
+					});
 					console.log("提交成功！");
 					this.isok = true;
 				}else{

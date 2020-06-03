@@ -61,11 +61,11 @@
 			// 登录提交
 			login:function(){
 				uni.request({
-					url:'http://tp5.1.com/index/5',
+					url:'tp5.1.com/index/index',
 					data:{
-						
+						email:this.email,
 					},
-					method:'GET',
+					method:'POST',
 					success: (data) => {
 						console.log(data);
 					}
