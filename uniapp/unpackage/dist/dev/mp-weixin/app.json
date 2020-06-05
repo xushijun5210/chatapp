@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/register/register",
+    "pages/signin/signin",
+    "pages/search/search",
+    "pages/userhome/userhome",
+    "pages/chatone/chatone",
+    "pages/addresslist/addresslist",
+    "pages/find/find",
+    "pages/me/me"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#7a7e83",
+    "selectedColor": "#0faeff",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./static/uniappimg/home.png",
+        "selectedIconPath": "static/uniappimg/homeHL.png"
+      },
+      {
+        "pagePath": "pages/addresslist/addresslist",
+        "text": "通讯录",
+        "iconPath": "static/uniappimg/user.png",
+        "selectedIconPath": "static/uniappimg/userHL.png"
+      },
+      {
+        "pagePath": "pages/find/find",
+        "text": "发现",
+        "iconPath": "static/uniappimg/user.png",
+        "selectedIconPath": "static/uniappimg/userHL.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "static/uniappimg/me.png",
+        "selectedIconPath": "./static/uniappimg/me_sel.png"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap80.json"
+}

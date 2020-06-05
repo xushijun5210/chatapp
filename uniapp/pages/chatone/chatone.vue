@@ -1,18 +1,41 @@
 <template>
 	<view class="content">
-		<view class="box_tou">
-		     和。。。。。在聊天
+		<!-- #ifdef MP-WEIXIN --><!-- 微信小程序出现 -->
+		          <view class="status_bar">	</view>
+		<!-- #endif -->
+		<view class="top-bar">
+		    <view class="box_top_left" @tap="backOne">
+		    	<image class="box_back" src="../../static/uniappimg/fanhui.png" ></image>
+		    </view>
+			<view class="box_top_right">
+				<view class="text">
+					浪迹天涯
+				</view>
+			</view>
 		</view>
-		<view class="box">
-			<image src="../../static/img/4bd60e8544a0b91d6773fdb1fb0d283b.jpg" class="touxiang"></image>
-			<view class="box-content">你好啊</view>
-		</view>
-		<view class="box1">
-			<image src="../../static/img/57c7ad7ba739a_1024.jpg" class="touxiang"></image>
-			<view class="box-content">你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊</view>
+		<view class="main">
+			<view class="box">
+				<image src="../../static/img/4bd60e8544a0b91d6773fdb1fb0d283b.jpg" class="touxiang"></image>
+				<view class="box-content">你好啊</view>
+			</view>
+			<view class="box1">
+				<image src="../../static/img/57c7ad7ba739a_1024.jpg" class="touxiang"></image>
+				<view class="box-content">你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊</view>
+			</view>
 		</view>
 		<view class="box_bottom">
-		     和。。。。。在聊天
+			<!-- <view class="box_bottom_left">
+				<image class="box_voice" src="../../static/uniappimg/voice.jpg" ></image>
+			</view> -->
+			<view class="box_bottom_center">
+				<!-- <input class="sendout" type="text"  value="" /> -->
+				<textarea class="sendout" auto-height disable-default-padding></textarea>
+			</view>
+			<view class="box_bottom_right">
+				 <view class="submit">
+				 		发送
+				 </view>
+			</view>
 		</view>
 	</view>
 </template>
@@ -63,12 +86,18 @@
 					console.log("已经被关闭了")
 				})
 			},
+			// 使用uni.navigateBack可以返回到原页面 （返回登录页面)
+			backOne:function(){
+				uni.navigateBack({
+					delta:1
+				});
+			}
 		}
 	}
 </script>
 
 <style lang="scss">
-	@import url("../../commons/css/publictop.css");
+	@import url("../../commons/css/publicchat.css");
 	@import url("../../commons/css/publicbottom.css");
 	@import url("chatone.css");
 </style>

@@ -1,5 +1,9 @@
 <template>
 	<view class="content">
+		<!-- 头部 start-->
+		<!-- #ifdef MP-WEIXIN --><!-- 微信小程序出现 -->
+		          <view class="status_bar">	</view>
+		<!-- #endif -->
 		<view class="top-bar">
 			<view class="top-bar-left">
 				首页
@@ -13,28 +17,8 @@
 				</view>
 			</view>
 		</view>
+		<!-- 头部 end-->
 		<view class="main">
-			<view class="apply">
-				<view class="friend-list">
-					<view class="friend-list-l">
-						<image src="../../static/img/2256974_131330799000_2.jpg" class="friend-list-l-img" mode=""></image>
-						<text class="tip">1</text>
-					</view>
-					<view class="friend-list-r">
-						<view class="friend-list-r-top">
-							<view class="name">
-								好友申请
-							</view>
-							<view class="time">
-								15:56
-							</view>
-						</view>
-						<view class="news">
-							对方要申请你为好友
-						</view>
-					</view>
-				</view>
-			</view>
 			<view class="friends">
 				<view class="friend-list" v-for="(item,index) in friends" :key="item.id" @tap="tochatone">
 					<view class="friend-list-l">

@@ -1,0 +1,1 @@
+<view><view class="top-bar"><view data-event-opts="{{[['tap',[['backOne',['$event']]]]]}}" class="top-bar-left" bindtap="__e"><image class="back-img top-bar-left-img" src="../../static/img/fanhui.png" mode></image></view></view></view>

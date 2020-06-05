@@ -1,8 +1,15 @@
-.box_tou{
-	font-size: 20px;
-	margin: 20upx;
-	text-align: center;
-	border-bottom: 1px solid #4CD964;
+/* #ifdef  MP-WEIXIN*/
+   .main{
+   	padding-top: 150rpx;
+   }
+/* #endif */
+/* #ifndef  MP-WEIXIN*/
+   .main{
+   	padding-top:92rpx;
+   }
+/* #endif */
+.main{
+	margin-bottom: 100rpx;
 }
 .box{
 	display: flex;

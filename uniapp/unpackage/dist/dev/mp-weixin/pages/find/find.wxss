@@ -1,0 +1,58 @@
+/* 小程序样式 */
+
+.status_bar{
+	height: 25px;
+	background: rgba(255,255,255,0.96);
+	width: 100%;
+	z-index: 1001;
+	position: fixed;
+}
+.top-bar{
+	position: fixed;
+	z-index: 1001;
+	top:25px;
+}
+.top-bar-img-right{
+	margin-right: 250rpx;
+}
+
+
+/* 头部公用样式top-bar-begin */
+.top-bar{
+	width: 100%;
+	overflow: hidden;/* 清除浮动 */
+	height: 88rpx;
+	background: rgba(255,255,255,0.96);
+	box-shadow: 0px 1px 0px rgba(0,0,0,0.1);
+}
+.top-bar-left{
+	float: left;
+	display: inline-block;
+	line-height: 88rpx;
+	padding-left: 10rpx;
+}
+.top-bar-right{
+	float: right;
+	line-height: 88rpx;
+	display: inline-block;/* 转为行内块标签 */
+}
+.top-bar-img{
+	width: 88rpx;
+	height: 68rpx;
+	border-radius: 16rpx;
+	margin-top: 10rpx;
+}
+.search{
+	float: left;
+}
+.top-bar-img-left{
+	margin-right: 30rpx;
+}
+/* .top-bar-img-right{
+	margin-right: 20rpx;
+} */
+.add{
+	float: right;
+}
+/* 头部公用样式top-bar-end */
+

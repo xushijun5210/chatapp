@@ -1,16 +1,16 @@
-.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		padding-bottom: 50rpx;
-	}
-
-/* friends-begin */
+/* #ifdef  MP-WEIXIN*/
+   .main{
+   	padding-top: 150rpx;
+   }
+/* #endif */
+/* #ifndef  MP-WEIXIN*/
+   .main{
+   	padding-top:92rpx;
+   }
+/* #endif */
+/* 头部公用样式top-bar-end */
 .main{
-	/* padding: 0 10rpx; */
 	width: 100%;
-	padding-top: 92rpx;
 }
 .friends{
 	margin-top: 5rpx;

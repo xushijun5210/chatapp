@@ -1,0 +1,1 @@
+.top-bar{position:fixed;z-index:1001;top:0;width:100%;height:88rpx;background:hsla(0,0%,100%,.96);box-shadow:0 1px 0 rgba(0,0,0,.1)}.top-bar-left{float:left;margin-left:20rpx}.top-bar-center{position:absolute;text-align:center;left:0;right:0;margin:auto}.top-bar-left-img{width:88rpx;height:68rpx;border-radius:16rpx;top:7px}

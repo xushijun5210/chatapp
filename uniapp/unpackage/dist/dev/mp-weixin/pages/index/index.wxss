@@ -1,0 +1,167 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+/* 小程序样式 */
+
+.status_bar{
+	height: 25px;
+	background: rgba(255,255,255,0.96);
+	width: 100%;
+	z-index: 1001;
+	position: fixed;
+}
+.top-bar{
+	position: fixed;
+	z-index: 1001;
+	top:25px;
+}
+.top-bar-img-right{
+	margin-right: 250rpx;
+}
+
+
+/* 头部公用样式top-bar-begin */
+.top-bar{
+	width: 100%;
+	overflow: hidden;/* 清除浮动 */
+	height: 88rpx;
+	background: rgba(255,255,255,0.96);
+	box-shadow: 0px 1px 0px rgba(0,0,0,0.1);
+}
+.top-bar-left{
+	float: left;
+	display: inline-block;
+	line-height: 88rpx;
+	padding-left: 10rpx;
+}
+.top-bar-right{
+	float: right;
+	line-height: 88rpx;
+	display: inline-block;/* 转为行内块标签 */
+}
+.top-bar-img{
+	width: 88rpx;
+	height: 68rpx;
+	border-radius: 16rpx;
+	margin-top: 10rpx;
+}
+.search{
+	float: left;
+}
+.top-bar-img-left{
+	margin-right: 30rpx;
+}
+/* .top-bar-img-right{
+	margin-right: 20rpx;
+} */
+.add{
+	float: right;
+}
+/* 头部公用样式top-bar-end */
+
+.main{
+   	padding-top: 150rpx;
+}
+
+
+/* 头部公用样式top-bar-end */
+.main{
+	width: 100%;
+}
+.friends{
+	margin-top: 5rpx;
+	margin: 3rpx 10rpx;
+}
+.friend-list{ 
+	height: 100rpx;
+	border: 1rpx solid rgba(39,40,50,0.1);
+	width: 100%;
+	margin-top: 5rpx;
+	float: right;
+	/* &:active{
+		background-color: #007AFF;
+	} */
+}
+.friend-list-l{
+	position: relative;
+	margin-left: 5rpx;
+	float: left;
+}
+.friend-list-l-img{
+	width: 96rpx;
+	height: 96rpx;
+	border-radius:24rpx;
+	/* display:inline-block; */
+	padding: 2rpx;
+}
+.tip{ 
+	position: absolute;
+	top:0;
+	left: 68rpx;
+	height: 36rpx;
+	line-height: 36rpx;
+	min-width: 36rpx;
+	color: #DD524D;
+	font-size: 12px;
+	background: rgba(255,93,91,1);
+	border-radius: 16rpx;
+	text-align: center;
+}
+.friend-list-r{ 
+	height: 100rpx;
+	padding-left: 16rpx;
+}
+.friend-list-r-top{
+	height: 50rpx;
+	width: 100%;
+	/* border: 1rpx solid rgba(39,40,50,0.1); */
+}
+.name{
+	line-height: 50rpx;
+	font-size: 18px;
+	float: left;
+	padding-left: 15rpx;
+}
+.time{
+	/* display: none; */
+	font-size: 12px;
+	line-height: 50rpx;
+	float: right;
+	padding-right: 15rpx;
+}
+.news{
+	font-size: 14px;
+	height: 50rpx;
+	line-height: 50rpx;
+	padding-left: 15rpx;
+	/* 内容省略号 */
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+}
+/* friends-end */
+
