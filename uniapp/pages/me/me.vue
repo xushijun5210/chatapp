@@ -7,12 +7,19 @@
 			<view class="top-bar-left">
 			我的
 			</view>
-			<view class="top-bar-right">
-				<view class="search" >
-					<image class="top-bar-img top-bar-img-left" src="../../static/uniappimg/search.png" mode=""></image>
+		</view>
+		<view class="main">
+			<view class="box" @tap="topersonalinformation">
+				<view class="box-left">
+					<image class="headsculpture" src="../../static/img/57c7ad7ba739a_1024.jpg" mode=""></image>
 				</view>
-				<view class="add" @tap="toSearch">
-					<image class="top-bar-img top-bar-img-right" src="../../static/uniappimg/tianjia.jpg" mode=""></image>
+				<view class="box-right">
+					<view class="nickname">
+						你哈哈哈
+					</view>
+					<view class="phone">
+						2273525664@qq.com
+					</view>
 				</view>
 			</view>
 		</view>
@@ -25,6 +32,14 @@
 			return {
 				
 			};
+		},
+		methods:{
+			//跳转到个人信息页面
+			topersonalinformation:function(){
+				uni.navigateTo({
+				    url: '../personalinformation/personalinformation',
+				});
+			},
 		}
 	}
 </script>

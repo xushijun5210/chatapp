@@ -55,6 +55,36 @@
 				"navigationStyle":"custom"//去除默认的头部
 			}
         }
+        ,{
+            "path" : "pages/personalinformation/personalinformation",
+            "style" : {
+				"navigationStyle":"custom"//去除默认的头部
+			}
+        }
+        ,{
+            "path" : "pages/changenickname/changenickname",
+            "style" : {
+				"navigationStyle":"custom"//去除默认的头部
+			}
+        }
+        ,{
+            "path" : "pages/changephone/changephone",
+            "style" : {
+				"navigationStyle":"custom"//去除默认的头部
+			}
+        }
+        ,{
+            "path" : "pages/changeemail/changeemail",
+            "style" : {
+				"navigationStyle":"custom"//去除默认的头部
+			}
+        }
+        ,{
+            "path" : "pages/headsculpture/headsculpture",
+            "style" : {
+				"navigationStyle":"custom"//去除默认的头部
+			}
+        }
     ],
 	"tabBar":{
 		"color": "#7a7e83",

@@ -91,6 +91,16 @@
 .main{
 	width: 100%;
 }
+
+.main{
+   	padding-top: 150rpx;
+}
+
+
+/* 头部公用样式top-bar-end */
+.main{
+	width: 100%;
+}
 .friends{
 	margin-top: 5rpx;
 	margin: 3rpx 10rpx;

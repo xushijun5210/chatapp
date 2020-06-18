@@ -179,12 +179,36 @@ var _default =
     return {
       socketTask: null,
       // 确保websocket是打开状态
-      is_open_socket: false };
+      is_open_socket: false,
+      usershow: [] };
 
   },
-  onLoad: function onLoad() {
+  onLoad: function onLoad(option) {
     // 进入这个页面的时候创建websocket连接【整个页面随时使用】
-    this.connectSocketInit();
+    // this.connectSocketInit();
+    var serverUrl = "http://tp5.1.com";
+    //获取上一个页面传入的参数
+    var userId = option.userId;
+    console.log(userId);
+    // uni.request({
+    // 	url:serverUrl+'/api/user/showlist',
+    // 	method:"POST",
+    // 	success:(res) => {
+    // 		// console.log(res.data);
+    // 		if(res.data.code == 200){
+    // 			// console.log(res.data);
+    // 			var userlist = res.data.data;
+    // 		    this.userlist = userlist;
+    // 		    // console.log(this.userlist);
+    // 			for(let i=0;i<this.userlist.length;i++){
+    // 				this.userlist[i].imgurl =serverUrl+this.userlist[i].imgurl;
+    // 			}
+    // 			 // for(let i=0;i<this.friends.length;i++){
+    // 			 // 	this.friends[i].imgurl='../../static/img/'+this.friends[i].imgurl;
+    // 			 // }
+    // 		}
+    // 	}
+    // });
   },
   methods: {
     // 进入这个页面的时候创建websocket连接【整个页面随时使用】

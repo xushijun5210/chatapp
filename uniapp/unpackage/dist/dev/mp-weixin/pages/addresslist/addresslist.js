@@ -131,7 +131,39 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -152,10 +184,43 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 var _default =
 {
   data: function data() {
-    return {};
+    return {
+      userlist: [] };
 
+  },
+  onLoad: function onLoad() {var _this = this;
+    // var Url = "http://139.159.202.203/index.php/api/user/showlist";
+    var serverUrl = "http://tp5.1.com";
+    uni.request({
+      url: serverUrl + '/api/user/showlist',
+      method: "POST",
+      success: function success(res) {
+        // console.log(res.data);
+        if (res.data.code == 200) {
+          // console.log(res.data);
+          var userlist = res.data.data;
+          _this.userlist = userlist;
+          // console.log(this.userlist);
+          for (var i = 0; i < _this.userlist.length; i++) {
+            _this.userlist[i].imgurl = serverUrl + _this.userlist[i].imgurl;
+          }
+          // for(let i=0;i<this.friends.length;i++){
+          // 	this.friends[i].imgurl='../../static/img/'+this.friends[i].imgurl;
+          // }
+        }
+      } });
 
-  } };exports.default = _default;
+  },
+  methods: {
+    //跳转到聊天页面
+    tochatone: function tochatone(e) {
+      var userId = e.currentTarget.dataset.userid;
+      // console.log(userId);
+      uni.navigateTo({
+        url: '../chatone/chatone?userId=' + userId });
+
+    } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

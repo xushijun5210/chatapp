@@ -8,3 +8,5 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
+// Route::rule('index/index/index','index/Index/index');
+// Route::rule('index/index/welcome','index/Index/welcome');

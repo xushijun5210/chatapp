@@ -1,0 +1,43 @@
+/* #ifdef  MP-WEIXIN*/
+   .main{
+   	padding-top: 150rpx;
+   }
+/* #endif */
+/* #ifndef  MP-WEIXIN*/
+   .main{
+   	padding-top:92rpx;
+   }
+/* #endif */
+.box{
+	height: 100rpx;
+	/* border: 1rpx solid rgba(39,40,50,0.1); */
+	width: 100%;
+	margin-top: 5rpx;
+	display: flex;
+	flex-direction: row;
+}
+/* .newfriends{
+}	 */
+.left{
+	margin-left: 5rpx;
+}
+.headportrait{
+	width: 96rpx;
+	height: 96rpx;
+	border-radius:24rpx;
+	/* display:inline-block; */
+	padding: 2rpx;
+	margin-left: 5rpx;
+}
+.right{
+	line-height:100rpx ;
+	width: 100%;
+	/* border:1rpx solid #007AFF; */
+	/* width: calc(100%-96rpx); */
+	border-bottom:1rpx solid rgba(39,40,50,0.1); ;
+}
+.right-content{
+	font-size: 22px;
+	padding-left: 10rpx;
+	/* border: 1rpx solid rgba(39,40,50,0.1); */
+}

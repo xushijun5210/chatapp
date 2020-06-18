@@ -8,7 +8,12 @@
     "pages/chatone/chatone",
     "pages/addresslist/addresslist",
     "pages/find/find",
-    "pages/me/me"
+    "pages/me/me",
+    "pages/personalinformation/personalinformation",
+    "pages/changenickname/changenickname",
+    "pages/changephone/changephone",
+    "pages/changeemail/changeemail",
+    "pages/headsculpture/headsculpture"
   ],
   "subPackages": [],
   "window": {
@@ -49,5 +54,5 @@
     ]
   },
   "usingComponents": {},
-  "sitemapLocation": "sitemap80.json"
+  "sitemapLocation": "sitemap5.json"
 }

@@ -56,3 +56,48 @@
 }
 /* 头部公用样式top-bar-end */
 
+.main{
+   	padding-top: 150rpx;
+}
+
+
+/* 头部公用样式top-bar-end */
+.main{
+	width: 100%;
+}
+.box{
+	/* border: 1rpx solid red; */
+	width: 100%;
+	margin-top: 5rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	height: 120rpx;
+}
+.box-left{
+	margin-left: 20rpx;
+}
+.headsculpture{
+	width: 110rpx;
+	height: 110rpx;
+	border-radius:24rpx;
+	padding-top: 5rpx;
+}
+.box-right{
+	padding-left: 10rpx;
+}
+.nickname{
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 80rpx;
+}
+.phone{
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 20rpx;
+}
+

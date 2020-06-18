@@ -56,3 +56,13 @@
 }
 /* 头部公用样式top-bar-end */
 
+.main{
+   	padding-top: 150rpx;
+}
+
+
+/* 头部公用样式top-bar-end */
+.main{
+	width: 100%;
+}
+

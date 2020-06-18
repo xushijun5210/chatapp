@@ -64,3 +64,17 @@
 	float: right;
 }
 /* 头部公用样式top-bar-end */
+/* #ifdef  MP-WEIXIN*/
+   .main{
+   	padding-top: 150rpx;
+   }
+/* #endif */
+/* #ifndef  MP-WEIXIN*/
+   .main{
+   	padding-top:92rpx;
+   }
+/* #endif */
+/* 头部公用样式top-bar-end */
+.main{
+	width: 100%;
+}

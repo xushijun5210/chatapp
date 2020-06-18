@@ -7,9 +7,8 @@ class Index
     {
         return view();
     }
-
-    public function hello($name = 'ThinkPHP5')
+    public function welcome()
     {
-        return 'hello,' . $name;
+    	return view();
     }
 }

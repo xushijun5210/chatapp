@@ -208,16 +208,17 @@ var _default =
     // 获取用户名
     getUserName: function getUserName(e) {
       // console.log(e);
-      var reg = /^[a-zA-Z0-9_-]{4,16}$/;
+      // let reg = /^[a-zA-Z0-9_-]{4,16}$/;
+      var reg = /^.{2,16}$/;
       this.UserName = e.detail.value;
       if (this.UserName.length > 0) {
         if (reg.test(this.UserName)) {
-          console.log("用户名正确");
-          console.log(this.UserName);
+          // console.log("用户名正确");
+          // console.log(this.UserName);
           this.register();
           this.isuser = true;
         } else {
-          console.log("用户名不正确");
+          // console.log("用户名不正确");
         }
       }
     },
@@ -229,12 +230,12 @@ var _default =
       console.log(this.UserEmail);
       if (this.UserEmail.length > 0) {
         if (reg.test(this.UserEmail)) {
-          console.log("正确");
+          // console.log("正确");
           this.register();
           this.isemail = true;
           this.invalid = false;
         } else {
-          console.log("不正确");
+          // console.log("不正确");
           this.invalid = true;
           this.isemail = false;
         }
@@ -248,21 +249,23 @@ var _default =
       console.log(this.UserPassword);
       if (this.UserPassword.length > 0) {
         if (reg.test(this.UserPassword)) {
-          console.log("密码合格");
+          // console.log("密码合格");
           this.register();
-          console.log(this.UserPassword);
+          // console.log(this.UserPassword);
         } else {
-          console.log("密码不合格");
-        }
+            // console.log("密码不合格");
+          }
       }
     },
     // 判断注册提交
     register: function register() {
       if (this.UserName && this.UserEmail && this.UserPassword) {
         uni.request({
-          url: 'http://tp5.1.com/index/index',
+          url: 'http://tp5.1.com/api/user/add',
           data: {
-            email: this.UserEmail },
+            email: this.UserEmail,
+            name: this.UserName,
+            password: this.UserPassword },
 
           method: 'POST',
           success: function success(data) {

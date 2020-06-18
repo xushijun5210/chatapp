@@ -56,3 +56,57 @@
 }
 /* 头部公用样式top-bar-end */
 
+.main{
+   	padding-top: 150rpx;
+}
+
+
+/* 头部公用样式top-bar-end */
+.main{
+	width: 100%;
+}
+
+.main{
+   	padding-top: 150rpx;
+}
+
+
+.box{
+	height: 100rpx;
+	/* border: 1rpx solid rgba(39,40,50,0.1); */
+	width: 100%;
+	margin-top: 5rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+}
+/* .newfriends{
+}	 */
+.left{
+	margin-left: 5rpx;
+}
+.headportrait{
+	width: 96rpx;
+	height: 96rpx;
+	border-radius:24rpx;
+	/* display:inline-block; */
+	padding: 2rpx;
+	margin-left: 5rpx;
+}
+.right{
+	line-height:100rpx ;
+	width: 100%;
+	/* border:1rpx solid #007AFF; */
+	/* width: calc(100%-96rpx); */
+	border-bottom:1rpx solid rgba(39,40,50,0.1);
+}
+.right-content{
+	font-size: 22px;
+	padding-left: 10rpx;
+	/* border: 1rpx solid rgba(39,40,50,0.1); */
+}
+
