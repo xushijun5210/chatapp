@@ -11,14 +11,14 @@
 		<view class="main">
 			<view class="box" @tap="topersonalinformation">
 				<view class="box-left">
-					<image class="headsculpture" src="../../static/img/57c7ad7ba739a_1024.jpg" mode=""></image>
+					<image class="headsculpture" :src="imgurl" mode=""></image>
 				</view>
 				<view class="box-right">
 					<view class="nickname">
-						你哈哈哈
+						{{name}}
 					</view>
 					<view class="phone">
-						2273525664@qq.com
+						{{email}}
 					</view>
 				</view>
 			</view>
@@ -30,8 +30,39 @@
 	export default {
 		data() {
 			return {
-				
+				imgurl:'',
+				name:'',
+				email:'',
 			};
+		},
+		onLoad() {
+			var token = this.getGlobalToken;
+			var serverUrl = this.serverUrl;
+			if (token != null && token != "" && token != undefined) {
+				    uni.request({
+				    	url:serverUrl+'/api/user/me',
+				    	method:"POST",
+				    	header:{
+				    		'authorization':token
+				    	},
+				    	success:(res) => {
+				    		console.log(res.data);
+				    		if(res.data.code == 200){
+								this.name = res.data.data[0]['name'];
+								this.email = res.data.data[0]['email'];
+								this.imgurl = serverUrl + res.data.data[0]['imgurl'];
+				    		    // console.log(this.imgurl);
+				    			// for(let i=0;i<this.friendlist.length;i++){
+				    			// 	this.friendlist[i].imgurl =serverUrl+this.friendlist[i].imgurl;
+				    			// }
+				    		}
+				    	}
+				    });
+			} else {
+					uni.navigateTo({
+					    url: '../signin/signin',
+					});
+			}
 		},
 		methods:{
 			//跳转到个人信息页面

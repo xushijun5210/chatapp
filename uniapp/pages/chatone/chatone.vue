@@ -9,29 +9,30 @@
 		    </view>
 			<view class="box_top_right">
 				<view class="text">
-					浪迹天涯
+					{{friendname}}
 				</view>
 			</view>
 		</view>
 		<view class="main">
+			<!-- <messageshow ></messageshow> -->
+			<!-- <image :src="friendimg" mode=""></image> -->
 			<view class="box">
-				<image src="../../static/img/4bd60e8544a0b91d6773fdb1fb0d283b.jpg" class="touxiang"></image>
+				<image :src="friendimg" class="touxiang"></image>
 				<view class="box-content">你好啊</view>
 			</view>
 			<view class="box1">
-				<image src="../../static/img/57c7ad7ba739a_1024.jpg" class="touxiang"></image>
+				<image :src="meimg" class="touxiang"></image>
 				<view class="box-content">你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊</view>
 			</view>
 		</view>
-		<view class="box_bottom">
-			<!-- <view class="box_bottom_left">
-				<image class="box_voice" src="../../static/uniappimg/voice.jpg" ></image>
-			</view> -->
-			<view class="box_bottom_center">
-				<!-- <input class="sendout" type="text"  value="" /> -->
-				<textarea class="sendout" auto-height disable-default-padding></textarea>
+		<view class="foot">
+			<view class="footleft">
+				<image class="footleftimg" src="../../static/uniappimg/voice-right-3.png" mode=""></image>
 			</view>
-			<view class="box_bottom_right">
+			<view class="footcenter" >
+				<textarea class="sendout" :style.width="textareaWidth"   auto-height disable-default-padding></textarea>
+			</view>
+			<view class="footright">
 				 <view class="submit">
 				 		发送
 				 </view>
@@ -41,41 +42,72 @@
 </template>
 
 <script>
+	// import chattextarea from "../../components/chattextarea.vue";
+	// import messageshow from "../../components/messageshow.vue";
 	export default {
 		data() {
 			return {
+				friendname:'',
+				friendimg:'',
+				meimg:'',
+				usershow:[],
+				textareaWidth:0,
+				// windowHeight:0,
 				socketTask: null,
 				// 确保websocket是打开状态
 				is_open_socket: false,
-				usershow:[]
 			}
 		},
 		onLoad(option) {
+			uni.getSystemInfo({
+				success:function(res){
+					this.textareaWidth  = res.windowWidth - 80 ;
+					// this.textareaWidth = "height:" + this.textareaWidth;
+					console.log(this.textareaWidth);
+				}
+			})
+			var serverUrl = this.serverUrl;
+			var token = this.getGlobalToken;
             // 进入这个页面的时候创建websocket连接【整个页面随时使用】
-            // this.connectSocketInit();
-			var serverUrl = "http://tp5.1.com";
+             this.connectSocketInit();
 			//获取上一个页面传入的参数
 			var userId = option.userId;
 			console.log(userId);
-			// uni.request({
-			// 	url:serverUrl+'/api/user/showlist',
-			// 	method:"POST",
-			// 	success:(res) => {
-			// 		// console.log(res.data);
-			// 		if(res.data.code == 200){
-			// 			// console.log(res.data);
-			// 			var userlist = res.data.data;
-			// 		    this.userlist = userlist;
-			// 		    // console.log(this.userlist);
-			// 			for(let i=0;i<this.userlist.length;i++){
-			// 				this.userlist[i].imgurl =serverUrl+this.userlist[i].imgurl;
-			// 			}
-			// 			 // for(let i=0;i<this.friends.length;i++){
-			// 			 // 	this.friends[i].imgurl='../../static/img/'+this.friends[i].imgurl;
-			// 			 // }
-			// 		}
-			// 	}
-			// });
+			if (token != null && token != "" && token != undefined) {
+				    uni.request({
+				    	url:serverUrl+'/api/friend/showfriend',
+				    	method:"POST",
+				    	header:{
+				    		'authorization':token
+				    	},
+						data:{
+							id:userId
+						},
+				    	success:(res) => {
+				    		if(res.data.code == 200){
+								this.friendname = res.data.data[0].name;
+								this.friendimg  = serverUrl+res.data.data[0].imgurl;
+				    		}
+				    	}
+				    });
+					uni.request({
+						url:serverUrl+'/api/user/me',
+						method:"POST",
+						header:{
+							'authorization':token
+						},
+						success:(res) => {
+							if(res.data.code == 200){
+								// this.friendname = res.data.data[0].name;
+								this.meimg  = serverUrl+res.data.data[0].imgurl;
+							}
+						}
+					});
+			} else {
+					uni.navigateTo({
+					    url: '../signin/signin',
+					});
+			}	
 		},
 		methods: {
 	        // 进入这个页面的时候创建websocket连接【整个页面随时使用】
@@ -116,7 +148,11 @@
 					delta:1
 				});
 			}
-		}
+		},
+		// components:{//注册helloComp2
+		// 	chattextarea,
+		// 	messageshow
+		// }
 	}
 </script>
 

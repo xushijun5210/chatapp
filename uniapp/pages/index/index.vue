@@ -1,9 +1,7 @@
 <template>
 	<view class="content">
 		<!-- 头部 start-->
-		<!-- #ifdef MP-WEIXIN --><!-- 微信小程序出现 -->
-		          <view class="status_bar">	</view>
-		<!-- #endif -->
+		<view class="status_bar">	</view>
 		<view class="top-bar">
 			<view class="top-bar-left">
 				首页

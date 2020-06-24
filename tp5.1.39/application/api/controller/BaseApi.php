@@ -13,7 +13,7 @@ class BaseApi extends Controller
     {
         parent::initialize();
         //初始化代码initialize()
-        // $this->checkToken();
+        $this->checkToken();
     }
      /**
      * 检测Token
@@ -76,6 +76,18 @@ class BaseApi extends Controller
         }
     }
     /**
+     * 获取userid
+     * @param int 返回数据
+     */
+    protected function getUserId($header){
+    
+        $key = md5('xushijun');
+        $jwtAuth  = json_encode(JWT::decode($header, $key, array('HS256')));
+        $authInfo = json_decode($jwtAuth, true);
+        return $authInfo['user_id'];
+    }
+    /**
+     * 
      * 通用响应
      * @param array $data 返回数据
      * @param int $code   错误码

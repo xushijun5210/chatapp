@@ -2,7 +2,6 @@
 namespace app\api\controller;
 use think\Request;
 use think\Db;
-// use think\File;
 class User extends BaseApi
 {  //用户添加
     public function add(Request $request)
@@ -141,10 +140,19 @@ class User extends BaseApi
             echo $file->getError();
          }
     } 
-    public function showlist(){
-      header('Access-Control-Allow-Origin: *');
-    	$data = Db::table('user')->where('status',1)->select();
+     // 个人信息
+    public function me(Request $request)
+    {
+       // parma 表示接收所有传过来的参数 不管是post请求还是get请求 parma都能接收到参数
+      header('Access-Control-Allow-Origin: *'); 
+      $header = $this-> request->header('authorization');
+      // $user_id = $this -> getUserId($header);
+      if($header == 'null'){
+         return json_encode('拒绝访问');
+      }else{
+         $user_id = $this -> getUserId($header);
+      }
+      $data = Db::table('user')->where('id','=',$user_id)->where('status',1)->select();
       $this ->ok($data);
-    	 // return json_encode($data);
     }
 }

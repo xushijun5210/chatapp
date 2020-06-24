@@ -31,6 +31,7 @@
 		},
 		methods:{
 			formSubmit: function(e) {
+				// var serverUrl = this.serverUrl;
 		        var email = e.detail.value.email;
 				var id = 16;
 				var serverUrl = "http://tp5.1.com/api/user/updateemail";

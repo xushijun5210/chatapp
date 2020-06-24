@@ -25,7 +25,6 @@
 /* 透明度 */
 /* 文章场景相关 */
 /* 小程序样式 */
-
 .status_bar{
 	height: 25px;
 	background: rgba(255,255,255,0.96);
@@ -37,20 +36,22 @@
 	position: fixed;
 	z-index: 1001;
 	top:25px;
-}
-.top-bar-img-right{
-	margin-right: 250rpx;
-}
-
-
-/* 头部公用样式top-bar-begin */
-.top-bar{
 	width: 100%;
 	overflow: hidden;/* 清除浮动 */
 	height: 88rpx;
 	background: rgba(255,255,255,0.96);
 	box-shadow: 0px 1px 0px rgba(0,0,0,0.1);
 }
+.top-bar-img-right{
+	margin-right: 250rpx;
+}
+
+
+
+
+
+
+/* 头部公用样式top-bar-begin */
 .top-bar-left{
 	float: left;
 	display: inline-block;
@@ -81,20 +82,26 @@
 	float: right;
 }
 /* 头部公用样式top-bar-end */
-
 .main{
    	padding-top: 150rpx;
 }
+
+
+
+
 
 
 /* 头部公用样式top-bar-end */
 .main{
 	width: 100%;
 }
-
 .main{
    	padding-top: 150rpx;
 }
+
+
+
+
 
 
 /* 头部公用样式top-bar-end */

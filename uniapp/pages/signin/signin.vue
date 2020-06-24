@@ -18,11 +18,13 @@
 				你好，还原来到ccc
 			</view>
 			<view class="inputs">
-				<input type="text" @blur="getUserName" placeholder="用户名/邮箱" placeholder-style="color:#aaa;font-weight:200;" class="user" value="" />
+				<input type="text" @blur="getUserName" placeholder="邮箱" placeholder-style="color:#aaa;font-weight:200;" class="user" value="" />
 				<input type="password" @blur="getUserPassword" placeholder="密码" placeholder-style="color:#aaa;font-weight:200;" class="pwd" value="" />
 			</view>
 			<view class="tips">
-				输入用户名或密码错误！
+				<view class="" v-if="isright">
+					{{msg}}
+				</view>
 			</view>
 		</view>
 		<view class="submit" @tap="login">
@@ -35,21 +37,17 @@
 	export default {
 		data() {
 			return {
-				user:'',
+				email:'',
 				password:'',
+				isright:false,
+				msg:'',
 			}
 		},
 		methods: {
-			//跳转到注册页面
-			toRegister:function(){
-				uni.navigateTo({
-				    url: '../register/register',
-				});
-			},
 			// 获取用户名/邮箱
 			getUserName:function(e){
 				// console.log(e);
-				this.user = e.detail.value;
+				this.email = e.detail.value;
 				// console.log(this.user);
 			},
 			// 获取密码
@@ -60,19 +58,45 @@
 			},
 			// 登录提交
 			login:function(){
+				var serverUrl = this.serverUrl;
 				uni.request({
-					url:'tp5.1.com/index/index',
+					url:serverUrl+'/api/login/login',
 					data:{
 						email:this.email,
+						password:this.password
 					},
 					method:'POST',
 					success: (data) => {
-						console.log(data);
+						// console.log(data);
+						if(data.data.status==1001){
+							// console.log(data.data.token);
+							var data = data.data.token;
+							uni.setStorage({
+								key:'token',
+								data:data,
+								success() {
+								  uni.switchTab({//跳转到tabbar页面
+								  		url: '../index/index'
+								  	});
+								}
+							});
+						}else{
+							this.isright = true;
+							this.msg =data.data.msg;
+						}
 					}
 				})
 				// if(this.user && this.password){
 				// 	console.log("提交成功");
 				// }
+			},
+			//换成token
+			
+			//跳转到注册页面
+			toRegister:function(){
+				uni.navigateTo({
+				    url: '../register/register',
+				});
 			}
 		}
 	}

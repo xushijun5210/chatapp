@@ -34,13 +34,13 @@
 					</view>
 				</view>
 			</view>
-			<view class="box friend"  @tap="tochatone" v-for="user in userlist" :data-userId="user.id">
+			<view class="box friend"  @tap="tochatone" v-for="friend in friendlist" :data-userId="friend.id">
 				<view class="left">
-					<image class="headportrait" :src="user.imgurl" mode=""></image>
+					<image class="headportrait" :src="friend.imgurl" mode=""></image>
 				</view>
 				<view class="right">
 					<view class="right-content">
-						{{user.name}}
+						{{friend.name}}
 					</view>
 				</view>
 			</view>
@@ -52,31 +52,38 @@
 	export default {
 		data() {
 			return {
-				userlist:[]
+				friendlist:[],
 			};
 		},
 		onLoad() {
 			// var Url = "http://139.159.202.203/index.php/api/user/showlist";
-			var serverUrl = "http://tp5.1.com";
-			uni.request({
-				url:serverUrl+'/api/user/showlist',
-				method:"POST",
-				success:(res) => {
-					// console.log(res.data);
-					if(res.data.code == 200){
-						// console.log(res.data);
-						var userlist = res.data.data;
-					    this.userlist = userlist;
-					    // console.log(this.userlist);
-						for(let i=0;i<this.userlist.length;i++){
-							this.userlist[i].imgurl =serverUrl+this.userlist[i].imgurl;
-						}
-						 // for(let i=0;i<this.friends.length;i++){
-						 // 	this.friends[i].imgurl='../../static/img/'+this.friends[i].imgurl;
-						 // }
-					}
-				}
-			});
+			// 获取common.js中的服务器地址
+			// var serverUrl = common.serverUrl;
+			// 通过挂载到main.js中获取服务器的地址，作为全局变量
+			var serverUrl = this.serverUrl;
+			var token = this.getGlobalToken;
+			if (token != null && token != "" && token != undefined) {
+				    uni.request({
+				    	url:serverUrl+'/api/friend/showlist',
+				    	method:"POST",
+				    	header:{
+				    		'authorization':token
+				    	},
+				    	success:(res) => {
+				    		if(res.data.code == 200){
+				    			var friendlist = res.data.data;
+				    		    this.friendlist = friendlist;
+				    			for(let i=0;i<this.friendlist.length;i++){
+				    				this.friendlist[i].imgurl =serverUrl+this.friendlist[i].imgurl;
+				    			}
+				    		}
+				    	}
+				    });
+			} else {
+					uni.navigateTo({
+					    url: '../signin/signin',
+					});
+			}	
 		},
 		methods:{
 			//跳转到聊天页面

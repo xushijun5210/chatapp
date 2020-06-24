@@ -25,7 +25,6 @@
 /* 透明度 */
 /* 文章场景相关 */
 /* 小程序样式 */
-
 .status_bar{
 	height: 25px;
 	background: rgba(255,255,255,0.96);
@@ -38,8 +37,6 @@
 	z-index: 1001;
 	top:25px;
 }
-
-
 .top-bar{
 	width: 100%;
 	height: 88rpx;
@@ -64,7 +61,73 @@
 	border-radius: 16rpx;
 	top:7px;
 }
-.box_bottom{
+.foot {
+	position: fixed;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	width: 100%;
+	min-height: 50px;
+	bottom: 0;
+	z-index: 1001;
+	border-top: solid 1px #bbb;
+}
+.footleft{
+	width: 40px;
+	height: 40px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	position: fixed;
+	bottom: 5px;
+}
+.footleftimg{
+	width: 33px;
+	height: 33px;
+	margin-left: 2px;
+	top:7rpx;
+}
+.footcenter{
+	/* width: 324px; */
+	margin:5px 45px ;
+	border: solid 1px #ddd;
+	border-radius: 10px;
+	padding-left: 5px;
+	padding-top: 7px;
+	padding-bottom: 5px;
+}
+.submit{
+	font-size: 16px;
+	font-weight: 500;
+}
+.footright{
+	/* float: right; */
+	position: fixed;
+	bottom: 0rpx; 
+	/* border: solid 1px #bbb; */
+	height: 90rpx;
+	line-height:90rpx ;
+	margin-left: 375px;
+	/* display: flex; */
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	color: #1482D1;
+}
+/* .box_bottom{
 	position: fixed;
 	z-index: 1001;
 	bottom:0;
@@ -80,12 +143,11 @@
 	margin-left: 18rpx;
 }
 .sendout{
-	min-height: 88rpx;
-	/* width: 600rpx; */
+	min-height: 55rpx;
 	font-size: 24px;
 	maxlength:-1;
-	/* padding-left: 10rpx;
-	padding-right: 10rpx; */
+	margin-bottom: 10rpx;
+	margin-top: 10rpx;
 }
 .box_bottom_right{
 	position: absolute;
@@ -103,13 +165,10 @@
 	font-weight: 500;
 	color: rgba(39,40,50,1);
 	text-align: center;
-}
-
+} */
 .main{
    	padding-top: 150rpx;
 }
-
-
 .main{
 	margin-bottom: 100rpx;
 }

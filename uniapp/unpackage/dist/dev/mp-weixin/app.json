@@ -23,36 +23,37 @@
     "backgroundColor": "#F8F8F8"
   },
   "tabBar": {
-    "color": "#7a7e83",
-    "selectedColor": "#0faeff",
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "./static/uniappimg/home.png",
-        "selectedIconPath": "static/uniappimg/homeHL.png"
+        "iconPath": "static/uniappimg/wechat.png",
+        "selectedIconPath": "static/uniappimg/wechat_hl.png"
       },
       {
         "pagePath": "pages/addresslist/addresslist",
         "text": "通讯录",
-        "iconPath": "static/uniappimg/user.png",
-        "selectedIconPath": "static/uniappimg/userHL.png"
+        "iconPath": "static/uniappimg/address.png",
+        "selectedIconPath": "static/uniappimg/address_hl.png"
       },
       {
         "pagePath": "pages/find/find",
         "text": "发现",
-        "iconPath": "static/uniappimg/user.png",
-        "selectedIconPath": "static/uniappimg/userHL.png"
+        "iconPath": "static/uniappimg/find.png",
+        "selectedIconPath": "static/uniappimg/find_hl.png"
       },
       {
         "pagePath": "pages/me/me",
         "text": "我的",
-        "iconPath": "static/uniappimg/me.png",
-        "selectedIconPath": "./static/uniappimg/me_sel.png"
+        "iconPath": "static/uniappimg/my.png",
+        "selectedIconPath": "static/uniappimg/my_hl.png"
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap5.json"
+  "permission": {},
+  "usingComponents": {}
 }
